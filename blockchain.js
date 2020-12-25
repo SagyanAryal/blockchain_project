@@ -33,10 +33,6 @@ class Blockchain {
       let curr = this.chain[i];
       let prevBlock = this.chain[i-1];
 
-      if(curr.index !== prevBlock.index + 1){
-        return false;
-      }
-
       if(curr.hash !== curr.computeHash()){
         return false;
       }
