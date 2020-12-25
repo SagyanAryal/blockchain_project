@@ -51,3 +51,4 @@ let newB = new Block(1, 1, 0, 3))
 bChain.addBlock(new Block(1, 1, 0, 3))
 console.log(bChain.getCurrBlock().timestamp)
 bChain.addBlock(new Block(1, 1, 0, 3))
+aba

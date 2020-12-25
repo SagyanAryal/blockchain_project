@@ -25,4 +25,4 @@ let test3 = new Block(1, 2, 0, String(new Date()))
 console.log(test.timestamp)
 console.log(test2.hash)
 console.log(test3.hash)
-ab
+aba
