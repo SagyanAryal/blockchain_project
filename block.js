@@ -7,11 +7,10 @@ class Block{
     this.hash = this.computeHash();
     this.prevHash = prevHash;
     this.timestamp = timestamp;
-
   }
 
   getIndex() {
-    return index
+    return this.index
   }
 
   computeHash() {
@@ -24,3 +23,5 @@ module.exports = Block
 let test = new Block(1, 1, 0, String(new Date()))
 let test2 = new Block(1, 1, 0, String(new Date()))
 let test3 = new Block(1, 2, 0, String(new Date()))
+
+//console.log(test3)

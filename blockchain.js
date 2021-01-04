@@ -1,21 +1,25 @@
 import Block from './block.js'
 
 class Blockchain {
+  
   constructor() {
-    this.chain = [this.GenesisBlock];
+    this.chain = [this.GenesisBlock()];
   }
 
+  // Creates the first block - Genesis block
   GenesisBlock(){
     return new Block(null, 0, null, String(new Date()))
   }
-
+  // Adds new block, connects it to prev. block usisng hash of prev. block
   addBlock(newBlock){
     newBlock.prevHash = this.getCurrBlock().hash;
     newBlock.index = this.getCurrBlock().index + 1;
     newBlock.hash = newBlock.computeHash();
     newBlock.timestamp = String(new Date());
+    this.chain.push(newBlock);
   }
 
+  // Returns most recent block
   getCurrBlock(){
     return this.chain[this.chain.length - 1];
   }
@@ -42,4 +46,4 @@ class Blockchain {
 
 let bChain = new Blockchain();
 bChain.addBlock(new Block(1, 1, 0, String(new Date())))
-console.log(bChain.getCurrBlock().getIndex())
+console.log(bChain.getCurrBlock().index)
